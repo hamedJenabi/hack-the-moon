@@ -1,8 +1,7 @@
 'use client'
 
 import styles from "./AddressInput.module.scss";
-import { useEffect, useState, startTransition, useMemo, } from "react";
-import debounce from 'lodash/debounce';
+import { useEffect, useState, startTransition } from "react";
 import Image from "next/image";
 import * as Ariakit from "@ariakit/react";
 import Button from "@/components/Button/Button";
@@ -28,7 +27,6 @@ export default function AddressInput({ data, action }) {
     if (searchValue) fetchLocations();
 
   }, [searchValue]);
-
 
   return (
     <Card className={styles.container}>
