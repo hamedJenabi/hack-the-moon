@@ -1,0 +1,50 @@
+.btn {
+  // remove default styles of button
+  border: none;
+  outline: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  border-radius: 8px;
+  background: #3c3c3c;
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+  padding: 16px;
+  color: #fff;
+  font-family: Source Sans 3;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  &:hover,
+  &:focus {
+    outline: none;
+    .leftIcon {
+      transform: translateX(-3px);
+      transition: all 0.3s ease-in-out;
+    }
+    .rightIcon {
+      transform: translateX(3px);
+      transition: all 0.3s ease-in-out;
+    }
+  }
+
+  &.iconOnlyWrapper {
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    img {
+      color: black;
+    }
+  }
+}
+.iconOnly {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.default {
+  display: flex;
+}
