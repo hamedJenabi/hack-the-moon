@@ -22,13 +22,13 @@ export async function getData() {
         {
           nameEn: "Public Transport",
           icon: 'publicTransport',
-          id: 1,
+          id: 11,
           type: 'transport',
         },
         {
           nameEn: "Car",
           icon: 'car',
-          id: 2,
+          id: 12,
           type: 'transport',
         },
       ]

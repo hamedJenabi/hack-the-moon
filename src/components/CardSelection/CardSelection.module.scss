@@ -12,6 +12,7 @@
 }
 
 .card {
+  width: 100%;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -19,4 +20,23 @@
   flex-direction: column;
   gap: 0.5rem;
   border: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.checkbox {
+  display: none;
+
+  &~.card {
+    border: 2px solid transparent;
+  }
+
+  &:checked~.card {
+    border: 2px solid #FF5445;
+  }
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: flex-end;
 }

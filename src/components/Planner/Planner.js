@@ -23,6 +23,7 @@ const Planner = ({ data }) => {
     2: CardSelectionStep,
     3: CardSelectionStep,
   };
+
   return <>{planMapper[step]}</>
 }
 
