@@ -8,14 +8,9 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <div className={styles.container}>
-        <Navigation />
         <div className={styles.hero}>
-          <Image
-            className={styles.background}
-            src="/background.png"
-            alt=""
-            fill
-          />
+        <Navigation />
+         
           <div className={styles.titleContainer}>
             <h2 className={styles.title}>Discover Upper Austria</h2>
           </div>
