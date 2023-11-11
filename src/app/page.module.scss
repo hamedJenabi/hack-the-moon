@@ -15,15 +15,12 @@
   height: 744px;
   overflow: scroll;
 
-  @media (max-width: 700px) {}
+  @media (max-width: 700px) {
+  }
 }
-<<<<<<< Updated upstream
-
-=======
 .helpContainer {
   background-color: white;
 }
->>>>>>> Stashed changes
 .hero {
   padding: 2rem 1rem 20px 1rem;
   display: flex;
