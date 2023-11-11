@@ -79,7 +79,7 @@ const retrieveUrl = `https://api.mapbox.com/search/searchbox/v1/retrieve/${value
         </Ariakit.ComboboxPopover>
       </Ariakit.ComboboxProvider>
       <div className={styles.buttonContainer}>
-        <Button onClick={() => action('datePicker')}>Next</Button>
+        <Button hideLeft onClick={() => action('datePicker')}>Next</Button>
       </div>
     </Card>
   );
