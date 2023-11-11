@@ -2,6 +2,7 @@ import Image from "next/image";
 import styles from "./page.module.scss";
 import Button from "./components/Button/Button";
 import Link from "next/link";
+import FormDatePicker from "@/components/DatePicker/DatePicker";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
           <Link className={styles.link} href="/planner">
             Get started
           </Link>
+          <FormDatePicker/>
           <div className={styles.arrowWrapper}>
             <Image
               className={styles.arrowDown}
