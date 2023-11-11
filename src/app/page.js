@@ -1,6 +1,7 @@
 import Image from "next/image";
 import styles from "./page.module.scss";
 import Link from "next/link";
+import FormDatePicker from "@/components/DatePicker/DatePicker";
 
 export default function Home() {
   return (
