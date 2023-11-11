@@ -2,29 +2,33 @@
 
 import data from '@/steps'
 import styles from "./page.module.scss";
-import { CardSelection, Button } from "@/components";
+import { CardSelection } from "@/components";
 import { useState } from "react";
-import { unstable_useFormState as useFormState } from 'reakit/Form';
-
+import AddressInput from '@/components/AddressInput/AddressInput';
+import DateField from '@/components/DateField/DateField';
 
 export default function Home() {
-  const [step, setStep] = useState(1)
+  const [step, setStep] = useState('address')
   const [results, setResults] = useState([])
 
-  const clickCallback = values => {
-    setStep(step + 1)
-    setResults(current => [...current, values])
+  const clickCallback = (values, step) => {
+    setResults(current => [...current, values]);
+    setStep(step);
   }
 
-  const form = useFormState({
-    values: { state: null },
-  });
+  const CardSelectionStep = <CardSelection data={data[step]} currentStep={step} action={clickCallback} />
 
-  console.log(results)
+  const planMapper = {
+    'address': <AddressInput data={data[step]} action={setStep} />,
+    'datePicker': <DateField data={data[step]} action={clickCallback} />,
+    1: CardSelectionStep,
+    2: CardSelectionStep,
+    3: CardSelectionStep,
+  };
 
   return (
     <main className={styles.main}>
-      {data[step] ? (<CardSelection data={data[step]} form={form} action={clickCallback} />) : (<Button>submit</Button>)}
+      {planMapper[step]}
     </main>
   )
 }

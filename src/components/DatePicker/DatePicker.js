@@ -1,18 +1,14 @@
 'use client'
 import "react-datepicker/dist/react-datepicker.css";
-import { useState } from "react";
 import styles from './DatePicker.module.scss';
 const { default: DatePicker } = require("react-datepicker");
 
-const FormDatePicker = () =>{
-
-    const [startDate, setStartDate] = useState(new Date());
+const BaseDatePicker = ({ selectedDate, onChange }) => {
     return (
         <div className={styles.datepicker}>
-
-        <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />
+            <DatePicker selected={selectedDate} onChange={date => onChange(date)} inline />
         </div>
-        );
-    }
+    );
+}
 
-    export default FormDatePicker;
+export default BaseDatePicker;

@@ -1,3 +1,9 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -87,7 +93,8 @@
   border-color: hsl(204 3% 26%);
   background-color: hsl(204 3% 18%);
   color: hsl(204 20% 100%);
-  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.25),
+  box-shadow:
+    0 10px 15px -3px rgb(0 0 0 / 0.25),
     0 4px 6px -4px rgb(0 0 0 / 0.1);
 }
 
@@ -139,4 +146,9 @@
   height: 50px;
   cursor: pointer;
   transition: width 0.2s ease-in-out;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: flex-end;
 }

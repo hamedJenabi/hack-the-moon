@@ -8,48 +8,44 @@ import publicTransportIcon from '@/icons/publicTransport.svg';
 
 
 const steps = {
+  'address': {
+    question: "What's your interest?",
+  },
+  'datePicker': {
+    question: "When?",
+  },
   1: {
     question: "What's your interest?",
     values: [
       {
         label: "Culture",
         icon: cultureIcon,
-        value: {
-          type: 'interest',
-          value: 'culture'
-        }
+        type: 'interest',
+        value: 1,
       },
       {
         label: "Active",
         icon: activeIcon,
-        value: {
-          type: 'interest',
-          value: 'active'
-        }
+        value: 2,
+        type: 'interest',
       },
       {
         label: "Kid-friendly",
         icon: kidFriendlyIcon,
-        value: {
-          type: 'interest',
-          value: 'kidFriendly'
-        }
+        value: 3,
+        type: 'interest',
       },
       {
         label: "Relax",
         icon: relaxIcon,
-        value: {
-          type: 'interest',
-          value: 'relax'
-        }
+        value: 4,
+        type: 'interest',
       },
       {
         label: "Culinary",
         icon: culinaryIcon,
-        value: {
-          type: 'interest',
-          value: 'culinary'
-        }
+        value: 5,
+        type: 'interest',
       },
     ]
   },
@@ -59,18 +55,14 @@ const steps = {
       {
         label: "Public Transport",
         icon: publicTransportIcon,
-        value: {
-          type: 'transport',
-          value: 'publicTransport'
-        }
+        value: 1,
+        type: 'transport',
       },
       {
         label: "Car",
         icon: carIcon,
-        value: {
-          type: 'transport',
-          value: 'car'
-        }
+        value: 2,
+        type: 'transport',
       },
     ]
   },

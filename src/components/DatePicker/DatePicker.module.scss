@@ -87,6 +87,10 @@
     }
   }
 
+  :global(.react-datepicker) {
+    border: 0;
+  }
+
   :global(.react-datepicker__day--today) {
     border: 1px solid red;
     background: transparent;
@@ -138,15 +142,15 @@
   :global(.react-datepicker__day--selecting-range-end) {
     position: relative;
     border-radius: 600px;
+  }
 
-    // @include roundBackground($left: 0);
+  :global(.react-datepicker__navigation) {
+    top: 1.25rem;
   }
 
   :global(.react-datepicker__day--selecting-range-start) {
     position: relative;
     border-radius: 600px;
-
-    // @include roundBackground($right: 0);
 
     &:hover {
       color: #fff;
