@@ -13,15 +13,32 @@ export default function AddressInput({ data, action }) {
 
   const [searchValue, setSearchValue] = useState("");
 
+  const onSelectedLocation = async (value) =>{
+    console.log("selected: ",value?.mapbox_id);
+const retrieveUrl = `https://api.mapbox.com/search/searchbox/v1/retrieve/${value?.mapbox_id}?session_token=0bf6e88b-28b0-4e18-8bbe-c76818011465&access_token=${process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN}`
+    await fetch(retrieveUrl).then((response) =>
+    response.text()).then((res) => JSON.parse(res))
+    .then((locationObject) => {
+      console.log("result: ", locationObject);
+    }).catch((err) => console.log({ err }));
+
+        }
+
+
   useEffect(() => {
+
+   
+
     const fetchLocations = async () => {
       const url = `https://api.mapbox.com/search/searchbox/v1/suggest?q=${searchValue}&language=de&country=at&types=place&session_token=0bf6e88b-28b0-4e18-8bbe-c76818011465&access_token=${process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN}`;
-
+     
       await fetch(url).then((response) =>
         response.text()).then((res) => JSON.parse(res))
         .then((json) => {
           setLocations(json?.suggestions?.filter(f => f?.context?.region?.region_code == 4));
           console.log(json.suggestions);
+         
+         
         }).catch((err) => console.log({ err }));
     };
     if (searchValue) fetchLocations();
@@ -53,6 +70,7 @@ export default function AddressInput({ data, action }) {
                 key={value.name}
                 value={value.name}
                 className={styles.comboboxItem}
+                render={<button onClick={() => onSelectedLocation(value)}></button>}
               />
             ))
           ) : (
@@ -61,7 +79,7 @@ export default function AddressInput({ data, action }) {
         </Ariakit.ComboboxPopover>
       </Ariakit.ComboboxProvider>
       <div className={styles.buttonContainer}>
-        <Button onClick={() => action('datePicker')}>Next</Button>
+        <Button hideLeft onClick={() => action('datePicker')}>Next</Button>
       </div>
     </Card>
   );

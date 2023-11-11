@@ -3,15 +3,18 @@ import Image from "next/image";
 import classNames from "classnames";
 import styles from "./Button.module.scss";
 
-function Button({ onClick, children, iconOnly }) {
+function Button({ onClick, children, iconOnly, hideLeft = false }) {
   return (
     <button
       className={classNames(styles.btn, {
         [styles.iconOnlyWrapper]: iconOnly,
+        [styles.leftPadding]: hideLeft,
+       
       })}
       onClick={onClick}
     >
-      <div
+
+     {!hideLeft && <div
         className={classNames(styles.default, { [styles.iconOnly]: iconOnly })}
       >
         <Image
@@ -21,7 +24,7 @@ function Button({ onClick, children, iconOnly }) {
           width={iconOnly ? 20 : 30}
           height={iconOnly ? 20 : 30}
         />
-      </div>
+      </div>}
       {!iconOnly && children}
       {!iconOnly && (
         <Image
