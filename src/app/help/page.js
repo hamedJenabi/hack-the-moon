@@ -1,9 +1,9 @@
 "use client";
-import {  useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import styles from "./help.module.scss";
-
 import { useRouter } from "next/navigation";
+import Navigation from "@/components/Navigation/Navigation";
 
 const steps = [
   {
@@ -49,7 +49,7 @@ export default function Help() {
         <Image
           src={image}
           alt=""
-          width={320}
+          width={355}
           height={320}
           className={styles.image}
         />
@@ -85,6 +85,7 @@ export default function Help() {
   return (
     <main className={styles.main}>
       <div className={styles.container}>
+        <Navigation />
         <ComponentToRender />
         <div className={styles.links}>
           <div className={styles.link}>

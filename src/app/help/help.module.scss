@@ -17,6 +17,11 @@
 }
 .step {
   animation: fadeIn 0.8s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 22px;
 }
 .image {
   border-radius: 10px;

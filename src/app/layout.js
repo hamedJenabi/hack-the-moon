@@ -2,7 +2,6 @@
 import "./globals.scss";
 import { Inter, Ruda } from "next/font/google";
 import classNames from "classnames";
-import Navigation from "@/components/Navigation/Navigation";
 const ruda = Inter({ subsets: ["latin"] });
 const inter = Ruda({ subsets: ["latin"] });
 
@@ -15,7 +14,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={classNames(inter.className, ruda.className)}>
-        <Navigation />
         {children}
       </body>
     </html>

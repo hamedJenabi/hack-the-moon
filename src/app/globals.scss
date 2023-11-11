@@ -1,17 +1,19 @@
 html,
 body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   margin: 0;
   color: #232323;
   scroll-behavior: smooth;
-  background-color: #EAE8E4;
 }
 
 b,
 strong {
-  font-variation-settings: 'wght' 600;
+  font-variation-settings: "wght" 600;
   font-weight: revert;
 }
-
 
 th {
   font-weight: normal;
@@ -60,7 +62,7 @@ img {
   display: block;
 }
 
-article>*+* {
+article > * + * {
   margin-top: 1em;
 }
 
