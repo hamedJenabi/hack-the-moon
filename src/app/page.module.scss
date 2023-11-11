@@ -3,7 +3,6 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  // padding-top: 3rem;
 }
 
 .container,
@@ -16,9 +15,11 @@
   height: 734px;
   overflow: scroll;
 }
+
 .helpContainer {
   background-color: white;
 }
+
 .hero {
   padding: 0 1rem 20px 1rem;
   display: flex;
@@ -27,9 +28,12 @@
   height: 640px;
   position: relative;
   background-image: url("../../public/background.png");
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover; /* Resize the background image to cover the entire container */
+  background-position: center;
+  /* Center the image */
+  background-repeat: no-repeat;
+  /* Do not repeat the image */
+  background-size: cover;
+  /* Resize the background image to cover the entire container */
 }
 
 .section {

@@ -1,7 +1,6 @@
 import Image from "next/image";
 import styles from "./page.module.scss";
 import Link from "next/link";
-import FormDatePicker from "@/components/DatePicker/DatePicker";
 import Navigation from "@/components/Navigation/Navigation";
 
 export default function Home() {
@@ -9,8 +8,7 @@ export default function Home() {
     <main className={styles.main}>
       <div className={styles.container}>
         <div className={styles.hero}>
-        <Navigation />
-         
+          <Navigation />
           <div className={styles.titleContainer}>
             <h2 className={styles.title}>Discover Upper Austria</h2>
           </div>
