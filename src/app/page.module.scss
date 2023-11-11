@@ -20,12 +20,16 @@
   background-color: white;
 }
 .hero {
-  padding: 2rem 1rem 20px 1rem;
+  padding: 0 1rem 20px 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 414px;
+  height: 640px;
   position: relative;
+  background-image: url("../../public/background.png");
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
 }
 
 .section {
