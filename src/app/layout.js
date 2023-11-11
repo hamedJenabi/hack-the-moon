@@ -2,6 +2,7 @@
 import "./globals.css";
 import { Inter, Ruda } from "next/font/google";
 import classNames from "classnames";
+import Navigation from "@/components/Navigation/Navigation";
 const ruda = Inter({ subsets: ["latin"] });
 const inter = Ruda({ subsets: ["latin"] });
 
@@ -13,13 +14,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      {/* <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-      <link
-        href="https://fonts.googleapis.com/css2?family=Ruda:wght@600&display=swap"
-        rel="stylesheet"
-      /> */}
       <body className={classNames(inter.className, ruda.className)}>
+        <Navigation />
         {children}
       </body>
     </html>

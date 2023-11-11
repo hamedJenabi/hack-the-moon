@@ -1,7 +1,7 @@
 import React from "react";
-import styles from "./Button.module.scss";
 import Image from "next/image";
 import classNames from "classnames";
+import styles from "./Button.module.scss";
 
 function Button({ onClick, children, iconOnly }) {
   return (

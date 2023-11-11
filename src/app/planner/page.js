@@ -1,21 +1,30 @@
-import styles from "./page.module.scss";
-import CardSelection from "@/components/CardSelection/CardSelection";
+'use client'
 
-const data = {
-  question: 'Whats your interest?',
-  values: [
-    { label: "Culture", value: 'culture' },
-    { label: "Active", value: 'active' },
-    { label: "Kid-friendly", value: 'kidFriendly' },
-    { label: "Relax", value: 'relax' },
-  ]
-}
+import data from '@/steps'
+import styles from "./page.module.scss";
+import { CardSelection, Button } from "@/components";
+import { useState } from "react";
+import { unstable_useFormState as useFormState } from 'reakit/Form';
+
 
 export default function Home() {
+  const [step, setStep] = useState(1)
+  const [results, setResults] = useState([])
+
+  const clickCallback = values => {
+    setStep(step + 1)
+    setResults(current => [...current, values])
+  }
+
+  const form = useFormState({
+    values: { state: null },
+  });
+
+  console.log(results)
 
   return (
     <main className={styles.main}>
-      <CardSelection data={data} />
+      {data[step] ? (<CardSelection data={data[step]} form={form} action={clickCallback} />) : (<Button>submit</Button>)}
     </main>
   )
 }
