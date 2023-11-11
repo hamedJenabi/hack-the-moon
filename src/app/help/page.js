@@ -1,10 +1,8 @@
 "use client";
-import { Component, useState } from "react";
+import {  useState } from "react";
 import Image from "next/image";
 import styles from "./help.module.scss";
-import classNames from "classnames";
-import Slider from "react-slick";
-import Button from "../components/Button/Button";
+
 import { useRouter } from "next/navigation";
 
 const steps = [
