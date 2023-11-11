@@ -5,11 +5,118 @@
   align-items: center;
   padding-top: 3rem;
 }
-.container {
-  background-color: #f2f2f2;
-  border-radius: 10px;
+.container,
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  border-radius: 30px;
   width: 375px;
   height: 744px;
+  overflow: scroll;
   @media (max-width: 700px) {
+  }
+}
+.hero {
+  padding: 2rem 1rem 20px 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 744px;
+  position: relative;
+}
+.section {
+  background: #ffede9;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 244px;
+  gap: 10px;
+  color: #3c3c3c;
+}
+.arrowDown {
+  margin-top: 10px;
+  animation: float 2s ease-in-out infinite;
+}
+.arrowWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.background {
+  position: absolute;
+  z-index: -1;
+}
+.formContainer {
+  background-color: #f2f2f2;
+}
+.titleContainer {
+  width: 100px;
+}
+.title {
+  color: #3c3c3c;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 60px;
+  letter-spacing: -0.96px;
+}
+.sectionText,
+.sectionTitle {
+  text-align: center;
+}
+.link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+  background: #fff;
+  margin-top: auto;
+  color: black;
+  text-decoration: none;
+  font-family: Source Sans 3;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  padding: 1rem;
+  animation-name: slideUp;
+  animation-duration: 0.6s;
+  animation-timing-function: ease-out;
+  visibility: visible !important;
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(100%);
+  }
+  50% {
+    transform: translateY(-8%);
+  }
+  65% {
+    transform: translateY(4%);
+  }
+  80% {
+    transform: translateY(-4%);
+  }
+  95% {
+    transform: translateY(2%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(10px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0.7;
   }
 }
