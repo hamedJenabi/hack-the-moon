@@ -17,7 +17,7 @@ export default function Home() {
           <div className={styles.titleContainer}>
             <h2 className={styles.title}>Discover Upper Austria</h2>
           </div>
-          <Link className={styles.link} href="/planner">
+          <Link className={styles.link} href="/help">
             Get started
           </Link>
           <div className={styles.arrowWrapper}>

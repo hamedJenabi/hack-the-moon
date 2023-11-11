@@ -25,7 +25,6 @@ function Button({ onClick, children, iconOnly }) {
       {!iconOnly && children}
       {!iconOnly && (
         <Image
-          className={styles.rightIcon}
           alt="go back"
           src="/chevron_right.svg"
           width={iconOnly ? 20 : 30}
