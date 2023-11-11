@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-page-custom-font */
-import "./globals.css";
+import "./globals.scss";
 import { Inter, Ruda } from "next/font/google";
 import classNames from "classnames";
 import Navigation from "@/components/Navigation/Navigation";
