@@ -10,12 +10,6 @@ const CardSelection = ({ data, action }) => {
 
   return (
     <Card className={styles.container}>
-      {/* <RadioGroup
-          {...form}
-          name="state"
-          items={data?.values}
-          asRadio={RadioAsCard}
-        /> */}
       <h1>{data?.question}</h1>
       <div className={styles.cardGroup}>
         {data?.values.map(el => (
