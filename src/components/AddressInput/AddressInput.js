@@ -3,7 +3,7 @@
 import styles from "./AddressInput.module.scss";
 import { useEffect, useState ,startTransition, useMemo,} from "react";
 import debounce from 'lodash/debounce';
-
+import Image from "next/image";
 import * as Ariakit from "@ariakit/react";
 
 
@@ -33,10 +33,19 @@ export default function AddressInput() {
       <Ariakit.ComboboxProvider
         setValue={(value) => {
           startTransition(() => setSearchValue(value));
-        }}
+        }} 
       >
 
-          <Ariakit.Combobox placeholder="Ried im Innkreis" className={styles.combobox} />
+        <div className={styles.searchContainer}>
+            <Image
+              className={styles.searchIcon}
+              alt=""
+              src={"/SearchOutlined.svg"}
+              width={24}
+              height={24}
+              />
+          <Ariakit.Combobox placeholder="Search destination..." className={styles.combobox} />
+        </div>
      
         <Ariakit.ComboboxPopover gutter={8} sameWidth className={styles.popover}>
           {locations?.length ? (
