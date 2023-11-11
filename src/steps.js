@@ -7,7 +7,7 @@ export async function getData() {
 
   const steps = {
     'address': {
-      question: "What's your interest?",
+      question: "Where would you like to go?",
     },
     'datePicker': {
       question: "When?",

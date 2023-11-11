@@ -21,7 +21,6 @@ const Planner = ({ data }) => {
     'datePicker': <DateField data={data[step]} action={clickCallback} />,
     1: CardSelectionStep,
     2: CardSelectionStep,
-    3: CardSelectionStep,
   };
 
   return <>{planMapper[step]}</>
