@@ -5,11 +5,15 @@ import styles from './Overview.module.scss'
 import { icons } from '@/icons';
 
 const OverviewCard = ({ el: { image, city, title, street, phone, website, zipCode }, startDate, endDate }) => {
+  const availableHours = {
+    start: `${new Date(startDate).getUTCHours()}:${new Date(startDate).getMinutes().toString().padStart(2, '0')}`,
+    end: `${new Date(endDate).getUTCHours()}:${new Date(endDate).getMinutes().toString().padStart(2, '0')}`,
+  }
   return (
     <div>
       <div className={styles.topSection}>
         <Image src={icons['alarm']} width={20} height={20} className={styles.icon} alt='alarm' />
-        Visit between {new Date(startDate).getUTCHours()}  and {new Date(endDate).getUTCHours()}
+        Visit between {availableHours.start} and {availableHours.end}
       </div>
       <Card className={styles.card}>
         <Image src={image} className={styles.image} alt={title} fill />
