@@ -32,7 +32,9 @@ const CardSelection = ({ data, action, currentStep }) => {
                 className={styles.card}
               >
                 <Image src={icons[icon]} alt={nameEn} height={40} width={40} />
-                {nameEn}
+                <p>
+                  {nameEn}
+                  </p>
               </Clickable>
             </label>
           </>

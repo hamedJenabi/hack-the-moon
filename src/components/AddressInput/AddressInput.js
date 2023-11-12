@@ -68,7 +68,7 @@ const retrieveUrl = `https://api.mapbox.com/search/searchbox/v1/retrieve/${value
                 key={value.name}
                 value={value.name}
                 className={styles.comboboxItem}
-                render={<button onClick={() => onSelectedLocation(value)}></button>}
+                render={<div onClick={() => onSelectedLocation(value)}></div>}
               />
             ))
           ) : (
