@@ -13,7 +13,7 @@ const DateField = ({ data, action }) => {
       <h1>{data?.question}</h1>
       <BaseDatePicker selectedDate={pickedDate} onChange={date => setPickedDate(date)} />
       <div className={styles.buttonContainer}>
-        <Button hideLeft onClick={() => action({ type: 'date', value: pickedDate }, 1)}>Next</Button>
+        <Button onClick={() => action({ type: 'date', value: pickedDate }, 1)}>Next</Button>
       </div>
     </Card>
   );
