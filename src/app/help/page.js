@@ -86,30 +86,29 @@ export default function Help() {
   return (
     <main className={styles.main}>
       <div className={styles.container}>
-        <Navigation />
-        <ComponentToRender />
+        <div>
+          <Navigation />
+          <ComponentToRender />
+        </div>
         <div className={styles.links}>
-          
- {  step !== 0  ?
-    <button className={styles.link} onClick={previous}>
-            <Image
-              alt=""
-              src="/chevron_left-black.svg"
-              width={30}
-              height={30}
-            />
-            <div>Previous</div>
-          </button>
-:
+          {step !== 0 ?
+            <button className={styles.link} onClick={previous}>
+              <Image
+                alt=""
+                src="/chevron_left-black.svg"
+                width={30}
+                height={30}
+              />
+              <div>Previous</div>
+            </button>
+            :
+            <Link href="/planner" className={styles.skipIntro}>
+              Skip Intro
+            </Link>
 
-<Link href="/planner" className={styles.skipIntro}>
-Skip Intro
-</Link>
-          
-}
+          }
           <button className={styles.link} onClick={next}>
-           {step >= steps.length - 1 ? <div>Start Planing</div> : <div>Next</div>}
-
+            {step >= steps.length - 1 ? <div>Start Planing</div> : <div>Next</div>}
             <Image
               alt=""
               src="/chevron_right-black.svg"

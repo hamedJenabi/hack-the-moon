@@ -11,7 +11,7 @@ const DateField = ({ data, action }) => {
   return (
     <Card className={styles.container}>
       <h1>{data?.question}</h1>
-      <BaseDatePicker selectedDate={pickedDate} onChange={date => setPickedDate(date)} />
+      <BaseDatePicker minDate={new Date()} selectedDate={pickedDate} onChange={date => setPickedDate(date)} />
       <div className={styles.buttonContainer}>
         <Button onClick={() => action({ date: pickedDate.toLocaleDateString('en', { year: 'numeric', month: '2-digit', day: '2-digit' }) }, 'interests')}>Next</Button>
       </div>
