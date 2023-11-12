@@ -19,9 +19,9 @@ const steps = [
     image: "/slider-02.png",
   },
   {
-    title: "Welcome to the Help Center4",
+    title: "Pick an offer you like",
     description:
-      "Urna nibh adipiscing phasellus pellentesque est. Aliquam gravida ut ultrices id elit ultrices libero maecenas dui. Aenean posuere dictumst duis rutrum vitae amet.",
+      "Get weather and travel information for the day of your trip. See a detailed daily plan, contact the venues and book your trip! Pssst, 10% discount when booking with Mastercard.",
     image: "/slider-03.png",
   },
 ];
