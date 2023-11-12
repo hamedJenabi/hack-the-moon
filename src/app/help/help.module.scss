@@ -81,7 +81,9 @@
   color: black;
   display: flex;
   align-items: center;
-  padding: 10px 4px 10px 16px;
+  padding: 10px 16px;
+  background-color: transparent;
+  border: 0;
 
   &:focus,
   &:active {

@@ -1,5 +1,6 @@
 export async function getData() {
-  const res = await fetch('https://moon.neon.zone/api/interests?token=nJDknmuPRbUEXZ5B')
+  // TODO: check why
+  const res = await fetch('https://moon.neon.zone/api/interests?token=nJDknmuPRbUEXZ5B', { cache: 'no-store' })
 
   if (!res.ok) throw new Error('Failed to fetch data')
 

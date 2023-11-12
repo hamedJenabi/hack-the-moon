@@ -88,24 +88,24 @@ export default function Help() {
         <Navigation />
         <ComponentToRender />
         <div className={styles.links}>
-          <div className={styles.link}>
+          <button className={styles.link} onClick={previous}>
             <Image
               alt=""
               src="/chevron_left-black.svg"
               width={30}
               height={30}
             />
-            <div onClick={previous}>Previous</div>
-          </div>
-          <div className={styles.link}>
-            <div onClick={next}>Next</div>
+            <div>Previous</div>
+          </button>
+          <button className={styles.link} onClick={next}>
+            <div>Next</div>
             <Image
               alt=""
               src="/chevron_right-black.svg"
               width={30}
               height={30}
             />
-          </div>
+          </button>
         </div>
       </div>
     </main>
