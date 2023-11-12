@@ -17,6 +17,12 @@
   justify-content: space-between;
 }
 
+.contentContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
 .step {
   animation: fadeIn 0.8s ease-in-out;
   display: flex;

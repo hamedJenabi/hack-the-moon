@@ -1,5 +1,5 @@
 export async function getData() {
-  const res = await fetch('https://moon.neon.zone/api/interests?token=nJDknmuPRbUEXZ5B', { cache: 'no-store' })
+  const res = await fetch(`https://moon.neon.zone/api/interests?token=${process.env.NEXT_PUBLIC_API_TOKEN}`, { cache: 'no-store' })
 
   if (!res.ok) throw new Error('Failed to fetch data')
 

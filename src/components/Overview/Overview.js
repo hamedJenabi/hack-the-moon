@@ -12,7 +12,7 @@ const Overview = ({ results }) => {
 
   useEffect(() => {
     const fetchResults = async () => {
-      const url = `https://moon.neon.zone/api/schedules?token=nJDknmuPRbUEXZ5B`;
+      const url = `https://moon.neon.zone/api/schedules?token=${process.env.NEXT_PUBLIC_API_TOKEN}`;
 
       setIsLoading(true);
       await fetch(url, {

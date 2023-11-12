@@ -7,15 +7,15 @@ import Navigation from "@/components/Navigation/Navigation";
 
 const steps = [
   {
-    title: "Welcome to the Help Center",
+    title: "Set your preferences",
     description:
-      "Urna nibh adipiscing phasellus pellentesque est. Aliquam gravida ut ultrices id elit ultrices libero maecenas dui. Aenean posuere dictumst duis rutrum vitae amet.",
+      "With a few simple steps pick a date, location and activity types you are looking for.",
     image: "/slider-01.png",
   },
   {
-    title: "Welcome to the Help Center2",
+    title: "Browse our offers",
     description:
-      "Urna nibh adipiscing phasellus pellentesque est. Aliquam gravida ut ultrices id elit ultrices libero maecenas dui. Aenean posuere dictumst duis rutrum vitae amet.",
+      "Check out the different itineraries we have tailored to your preferences.",
     image: "/slider-02.png",
   },
   {
@@ -53,7 +53,7 @@ export default function Help() {
           height={320}
           className={styles.image}
         />
-        <div>
+        <div className={styles.contentContainer}>
           <h2 className={styles.title}>{title}</h2>
           <p className={styles.description}>{description}</p>
         </div>
