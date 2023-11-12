@@ -74,7 +74,7 @@ export default function AddressInput({ data, action }) {
         </Ariakit.ComboboxPopover>
       </Ariakit.ComboboxProvider>
       <div className={styles.buttonContainer}>
-        <Button disabled={!finalLocation || !searchValue} onClick={() => action({ lat: finalLocation[0], long: finalLocation[1] }, 'datePicker')}>Next</Button>
+        <Button disabled={!finalLocation || !searchValue} onClick={() => action({ long: finalLocation[0], lat: finalLocation[1] }, 'datePicker')}>Next</Button>
       </div>
     </Card>
   );
