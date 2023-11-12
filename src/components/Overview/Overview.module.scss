@@ -18,7 +18,7 @@
 .topSection {
   display: flex;
   gap: 0.5rem;
-  border-left: 2px solid #EE0F14;
+  border-left: 2px solid #ee0f14;
   margin-bottom: 1rem;
 }
 
@@ -29,7 +29,7 @@
 .image {
   position: static !important;
   height: auto !important;
-  width: auto !important;
+  width: 100% !important;
   border-top-right-radius: 20px;
   border-top-left-radius: 20px;
 }
