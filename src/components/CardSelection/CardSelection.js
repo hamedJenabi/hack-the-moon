@@ -23,7 +23,7 @@ const CardSelection = ({ data, action, currentStep }) => {
     <Card className={styles.container}>
       <h1>{data?.question}</h1>
       <div className={styles.cardGroup}>
-        {data?.values?.map(({ nameEn, type, id, icon }) => (
+        {data?.values?.map(({ nameEn, id, icon }) => (
           <>
             <label>
               <Checkbox {...checkbox} value={id} key={id} className={styles.checkbox} />
@@ -34,14 +34,14 @@ const CardSelection = ({ data, action, currentStep }) => {
                 <Image src={icons[icon]} alt={nameEn} height={40} width={40} />
                 <p>
                   {nameEn}
-                  </p>
+                </p>
               </Clickable>
             </label>
           </>
         ))}
       </div>
       <div className={styles.buttonContainer}>
-        <Button onClick={handleClick}>Next</Button>
+        <Button disabled={!checkbox.state.length} onClick={handleClick}>Next</Button>
       </div>
     </Card>
   )

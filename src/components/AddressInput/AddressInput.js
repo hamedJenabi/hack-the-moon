@@ -12,31 +12,28 @@ export default function AddressInput({ data, action }) {
   const [locations, setLocations] = useState([]);
   const [finalLocation, setFinalLocation] = useState("");
   const [searchValue, setSearchValue] = useState("");
-  
 
-  const onSelectedLocation = async (value) =>{
-  
-const retrieveUrl = `https://api.mapbox.com/search/searchbox/v1/retrieve/${value?.mapbox_id}?session_token=0bf6e88b-28b0-4e18-8bbe-c76818011465&access_token=${process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN}`
+  const onSelectedLocation = async (value) => {
+    const retrieveUrl = `https://api.mapbox.com/search/searchbox/v1/retrieve/${value?.mapbox_id}?session_token=0bf6e88b-28b0-4e18-8bbe-c76818011465&access_token=${process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN}`
     await fetch(retrieveUrl).then((response) =>
-    response.text()).then((res) => JSON.parse(res))
-    .then((locationObject) => {
-      console.log("result: ", locationObject?.features[0]?.geometry?.coordinates);
-      setFinalLocation(locationObject);
-    }).catch((err) => console.log({ err }));
-
-        }
+      response.text()).then((res) => JSON.parse(res))
+      .then((locationObject) => {
+        console.log("result: ", locationObject?.features[0]?.geometry?.coordinates);
+        setFinalLocation(locationObject);
+      }).catch((err) => console.log({ err }));
+  }
 
 
   useEffect(() => {
     const fetchLocations = async () => {
       const url = `https://api.mapbox.com/search/searchbox/v1/suggest?q=${searchValue}&language=de&country=at&types=place&session_token=0bf6e88b-28b0-4e18-8bbe-c76818011465&access_token=${process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN}`;
-     
+
       await fetch(url).then((response) =>
         response.text()).then((res) => JSON.parse(res))
         .then((json) => {
           setLocations(json?.suggestions?.filter(f => f?.context?.region?.region_code == 4));
           console.log(json.suggestions);
-         
+
         }).catch((err) => console.log({ err }));
     };
     if (searchValue) fetchLocations();
@@ -76,7 +73,6 @@ const retrieveUrl = `https://api.mapbox.com/search/searchbox/v1/retrieve/${value
           )}
         </Ariakit.ComboboxPopover>
       </Ariakit.ComboboxProvider>
-     
       <div className={styles.buttonContainer}>
         <Button disabled={!finalLocation || !searchValue} onClick={() => action('datePicker')}>Next</Button>
       </div>

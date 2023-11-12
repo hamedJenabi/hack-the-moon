@@ -21,18 +21,22 @@
 
   &.disabled {
     background: #d0d5dd;
+    cursor: not-allowed;
   }
 
   &.leftPadding {
     padding-left: 30px;
   }
+
   &:hover,
   &:focus {
     outline: none;
+
     .leftIcon {
       transform: translateX(-3px);
       transition: all 0.3s ease-in-out;
     }
+
     .rightIcon {
       transform: translateX(3px);
       transition: all 0.3s ease-in-out;
@@ -43,20 +47,24 @@
     width: 40px;
     height: 40px;
     background-color: #fff;
+
     img {
       color: black;
     }
   }
+
   &.white {
     background: #fff;
     color: black;
   }
 }
+
 .iconOnly {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .default {
   display: flex;
 }
