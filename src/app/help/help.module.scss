@@ -5,6 +5,15 @@
   align-items: center;
 }
 
+.skipIntro {
+  border: 1px solid #3c3c3c;
+  border-radius: 16px;
+  padding: 16px;
+  text-decoration: none;
+  color: black;
+  margin-left: 16px;
+}
+
 .container {
   background-color: #eae8e4;
   display: flex;
@@ -72,6 +81,7 @@
 }
 
 .links {
+  padding: 0px 6px;
   width: 100%;
   display: flex;
   justify-content: space-between;

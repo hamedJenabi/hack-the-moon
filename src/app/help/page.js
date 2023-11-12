@@ -4,6 +4,7 @@ import Image from "next/image";
 import styles from "./help.module.scss";
 import { useRouter } from "next/navigation";
 import Navigation from "@/components/Navigation/Navigation";
+import Link from "next/link";
 
 const steps = [
   {
@@ -33,7 +34,7 @@ export default function Help() {
   const next = () => {
     if (step === steps.length - 1) {
       // redirect to planner
-      router.push("/planner", { scroll: false });
+      router.push("/planner");
     }
     setStep(step + 1);
   };
@@ -88,7 +89,9 @@ export default function Help() {
         <Navigation />
         <ComponentToRender />
         <div className={styles.links}>
-          <button className={styles.link} onClick={previous}>
+          
+ {  step !== 0  ?
+    <button className={styles.link} onClick={previous}>
             <Image
               alt=""
               src="/chevron_left-black.svg"
@@ -97,8 +100,16 @@ export default function Help() {
             />
             <div>Previous</div>
           </button>
+:
+
+<Link href="/planner" className={styles.skipIntro}>
+Skip Intro
+</Link>
+          
+}
           <button className={styles.link} onClick={next}>
-            <div>Next</div>
+           {step >= steps.length - 1 ? <div>Start Planing</div> : <div>Next</div>}
+
             <Image
               alt=""
               src="/chevron_right-black.svg"
