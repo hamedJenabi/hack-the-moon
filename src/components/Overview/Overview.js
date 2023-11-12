@@ -3,6 +3,8 @@
 import React, { useEffect, useState } from 'react'
 import styles from './Overview.module.scss'
 import OverviewCard from './OverviewCard';
+import { Card } from '@/components';
+
 const Overview = ({ results }) => {
   const [data, setData] = useState([])
 
@@ -23,15 +25,13 @@ const Overview = ({ results }) => {
 
   }, []);
 
-  console.log(data)
-
   return (
     <div className={styles.wrapper}>
       <h1>See what we have prepared for you</h1>
       <div className={styles.overviewCardWrapper}>
-        {data?.items?.map((el) => (
+        {data?.items?.length ? data?.items?.map((el) => (
           <OverviewCard key={el.id} el={el?.poi} />
-        ))}
+        )) : <Card>Results not found</Card>}
       </div>
     </div>
   )
