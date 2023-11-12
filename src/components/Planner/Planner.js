@@ -4,6 +4,7 @@ import { CardSelection } from "@/components";
 import { useState } from "react";
 import AddressInput from '@/components/AddressInput/AddressInput';
 import DateField from '@/components/DateField/DateField';
+import Overview from "@/components/Overview/Overview";
 
 const Planner = ({ data }) => {
   const [step, setStep] = useState('address')
@@ -14,16 +15,13 @@ const Planner = ({ data }) => {
     setStep(step);
   }
 
-  const CardSelectionStep = <CardSelection data={data[step]} currentStep={step} action={clickCallback} />
-
   const planMapper = {
-    'address': <AddressInput data={data[step]} action={setStep} />,
+    'address': <AddressInput data={data[step]} action={clickCallback} />,
     'datePicker': <DateField data={data[step]} action={clickCallback} />,
-    1: CardSelectionStep,
-    2: CardSelectionStep,
+    'interests': <CardSelection data={data[step]} currentStep={step} action={clickCallback} />,
   };
 
-  return <>{planMapper[step]}</>
+  return <>{data[step] ? planMapper[step] : <Overview results={results} />}</>
 }
 
 export default Planner;

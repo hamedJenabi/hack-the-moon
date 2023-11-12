@@ -15,7 +15,7 @@ const CardSelection = ({ data, action, currentStep }) => {
   const checkbox = useCheckboxState({ state: [] });
 
   const handleClick = () => {
-    action({ type: data?.values?.[0].type, value: checkbox.state, }, currentStep + 1)
+    action({ interests: checkbox.state, }, currentStep + 1)
     checkbox.setState([]);
   }
 
@@ -26,7 +26,7 @@ const CardSelection = ({ data, action, currentStep }) => {
         {data?.values?.map(({ nameEn, id, icon }) => (
           <>
             <label>
-              <Checkbox {...checkbox} value={id} key={id} className={styles.checkbox} />
+              <Checkbox {...checkbox} value={id} key={id + nameEn} className={styles.checkbox} />
               <Clickable
                 as={Card}
                 className={styles.card}

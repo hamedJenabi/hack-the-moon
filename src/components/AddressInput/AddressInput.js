@@ -18,8 +18,8 @@ export default function AddressInput({ data, action }) {
     await fetch(retrieveUrl).then((response) =>
       response.text()).then((res) => JSON.parse(res))
       .then((locationObject) => {
-        console.log("result: ", locationObject?.features[0]?.geometry?.coordinates);
-        setFinalLocation(locationObject);
+        setFinalLocation(locationObject.features?.[0].geometry.coordinates
+        );
       }).catch((err) => console.log({ err }));
   }
 
@@ -74,7 +74,7 @@ export default function AddressInput({ data, action }) {
         </Ariakit.ComboboxPopover>
       </Ariakit.ComboboxProvider>
       <div className={styles.buttonContainer}>
-        <Button disabled={!finalLocation || !searchValue} onClick={() => action('datePicker')}>Next</Button>
+        <Button disabled={!finalLocation || !searchValue} onClick={() => action({ lat: finalLocation[0], long: finalLocation[1] }, 'datePicker')}>Next</Button>
       </div>
     </Card>
   );

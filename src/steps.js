@@ -13,26 +13,9 @@ export async function getData() {
     'datePicker': {
       question: "When?",
     },
-    1: {
+    'interests': {
       question: "What's your interest?",
       values: interests,
-    },
-    2: {
-      question: 'How do you plan to move around?',
-      values: [
-        {
-          nameEn: "Public Transport",
-          icon: 'publicTransport',
-          id: 11,
-          type: 'transport',
-        },
-        {
-          nameEn: "Car",
-          icon: 'car',
-          id: 12,
-          type: 'transport',
-        },
-      ]
     },
   }
   return steps;
