@@ -24,7 +24,7 @@ const Overview = ({ results }) => {
         .then((json) => {
           setIsLoading(false);
           setData(json.data);
-        }).catch((err) => console.log({ err }));
+        }).catch((err) => console.error({ err }));
     };
 
     fetchResults();
@@ -38,9 +38,9 @@ const Overview = ({ results }) => {
         {data?.items?.length && data?.items?.map((el) => (
           <OverviewCard key={el.id} el={el?.poi} startDate={el.startTime} endDate={el.endTime} />
         ))}
-         {!data?.items?.length && !isLoading && <Card>Results not found</Card>}
+        {!data?.items?.length && !isLoading && <Card>Results not found</Card>}
 
-        {isLoading && <LottieAnimation/>}
+        {isLoading && <LottieAnimation />}
 
       </div>
     </div>

@@ -20,7 +20,7 @@ export default function AddressInput({ data, action }) {
       .then((locationObject) => {
         setFinalLocation(locationObject.features?.[0].geometry.coordinates
         );
-      }).catch((err) => console.log({ err }));
+      }).catch((err) => console.error({ err }));
   }
 
 
@@ -32,9 +32,8 @@ export default function AddressInput({ data, action }) {
         response.text()).then((res) => JSON.parse(res))
         .then((json) => {
           setLocations(json?.suggestions?.filter(f => f?.context?.region?.region_code == 4));
-          console.log(json.suggestions);
 
-        }).catch((err) => console.log({ err }));
+        }).catch((err) => console.error({ err }));
     };
     if (searchValue) fetchLocations();
 
