@@ -30,7 +30,7 @@ const Overview = ({ results }) => {
       <h1>See what we have prepared for you</h1>
       <div className={styles.overviewCardWrapper}>
         {data?.items?.length ? data?.items?.map((el) => (
-          <OverviewCard key={el.id} el={el?.poi} />
+          <OverviewCard key={el.id} el={el?.poi} startDate={el.startTime} endDate={el.endTime} />
         )) : <Card>Results not found</Card>}
       </div>
     </div>
